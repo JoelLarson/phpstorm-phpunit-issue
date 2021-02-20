@@ -1,0 +1,27 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<phpunit xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+         xsi:noNamespaceSchemaLocation="https://schema.phpunit.de/9.5/phpunit.xsd"
+         bootstrap="vendor/autoload.php"
+         beStrictAboutOutputDuringTests="true"
+         beStrictAboutTodoAnnotatedTests="true"
+         forceCoversAnnotation="true"
+         colors="true"
+         defaultTestSuite="All">
+    <testsuites>
+        <testsuite name="All">
+            <directory suffix="Test.php">./tests</directory>
+        </testsuite>
+    </testsuites>
+    <logging>
+        <junit outputFile="test-reports/junit.xml"/>
+    </logging>
+    <coverage includeUncoveredFiles="true">
+        <report>
+            <html outputDirectory="test-reports/test-reports.html"/>
+            <php outputFile="test-reports/api.cov"/>
+        </report>
+        <include>
+            <directory suffix=".php">tests</directory>
+        </include>
+    </coverage>
+</phpunit>

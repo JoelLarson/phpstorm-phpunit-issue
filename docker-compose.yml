@@ -1,0 +1,11 @@
+version: '3'
+networks:
+  external:
+services:
+  php:
+    build:
+      context: .
+    volumes:
+      - ./source:/var/www/html
+    networks:
+      - external
